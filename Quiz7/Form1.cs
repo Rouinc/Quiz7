@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Quiz7
 {
-    public partial class Form1 : Form
+    public partial class FormQuizz : Form
     {
-        public Form1()
+        public FormQuizz()
         {
             InitializeComponent();
         }
@@ -23,15 +23,15 @@ namespace Quiz7
             int []data = new int [kalimat.Length];
             int selisih;
 
-            kalimat = kalimat.ToUpper(); //konversi ke huruf kapital
+            kalimat = kalimat.ToUpper(); 
 
-            // konversi char ke ascii number ke array data
+            
             for(int i = 0; i < data.Length; i++)
             {
                 data[i] = (int)kalimat[i];
             }
 
-            // cari selisih huruf
+            
             string huruf, ganti;
             huruf = txtHuruf.Text;
             ganti = txtGanti.Text;
@@ -43,12 +43,12 @@ namespace Quiz7
             ch = huruf[0];
             cg = ganti[0];
 
-            selisih = ((int)ch - (int)cg); // selisih 
+            selisih = ((int)ch - (int)cg);  
 
-            // proses konversi mengikuti nilai selisih di atas
+            
             for (int i = 0; i < data.Length; i++)
             {
-                if (data[i] != 32) // jika character bukan merupakan spasi
+                if (data[i] != 32)
                 {
                     data[i] = (int)kalimat[i] - selisih;
 
@@ -66,7 +66,7 @@ namespace Quiz7
                 }
             }
 
-            // konversi dari data angka ascii dari array data ke kalimat konversi menggunakan string builder
+            
             var kal = new System.Text.StringBuilder();
             for (int i = 0; i < data.Length; i++)
             {
